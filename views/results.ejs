@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My results</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <% include partials/nav.ejs%>
+      <main>
+        <div class="container">
+          <div class="row header">
+            <div class="col-sm">SUBJECT</div>
+            <div class="col-sm">GRADE</div>
+            <div class="col-sm">COMMENT</div>
+          </div>
+          <div class="row">
+            <%data.forEach((item)=>{%>
+              <%if(item.grade<25){%>
+                <div class="col-sm-4 data"><%=item.course%></div>
+                <div class="col-sm-4 data" style="color:red"><%=item.grade%></div>
+                <div class="col-sm-4 data"><%=item.evaluation%></div>
+              <%}%>
+              <%if(item.grade>25&&item.grade<51){%>
+                <div class="col-sm-4 data"><%=item.course%></div>
+                <div class="col-sm-4 data" style="color:yellow"><%=item.grade%></div>
+                <div class="col-sm-4 data"><%=item.evaluation%></div>
+              <%}%>
+              <%if(item.grade>50&&item.grade<76){%>
+                <div class="col-sm-4 data"><%=item.course%></div>
+                <div class="col-sm-4 data" style="color:lightgreen"><%=item.grade%></div>
+                <div class="col-sm-4 data"><%=item.evaluation%></div>
+              <%}%>
+              <%if(item.grade>76&&item.grade<101){%>
+                <div class="col-sm-4 data"><%=item.course%></div>
+                <div class="col-sm-4 data" style="color:green"><%=item.grade%></div>
+                <div class="col-sm-4 data"><%=item.evaluation%></div>
+              <%}%>
+            <%})%>
+          </div>
+        </div>
+      </main>
+      <% include partials/footer.ejs %>
+  </body>
+</html>
