@@ -1,7 +1,5 @@
 body{
-  width:500px;
-  position:absolute;
-  left:25%;
+  height:100vh;
 }
 .navigation{
   display:inline;
@@ -14,6 +12,8 @@ body{
 nav{
   background-color: gray;
   text-align: center;
+  height:100px;
+  padding-top:60px;
 }
 span{
   margin:5px;
@@ -46,4 +46,11 @@ span{
   position:absolute;
   bottom:0px;
   left:5px;
+}
+.roundedBorder{
+  border-radius: 50%;
+}
+footer{
+  width: 100vw;
+
 }
