@@ -33,23 +33,9 @@ module.exports=function(app){
     res.render('results',{data:data});
   });
   app.get('/home',(req,res)=>{
-var data=[{
-  heading:'This years school galla expected to rock',
-  imagelink:'/static/dk.png',
-  story:'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and  will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects,dislikes, or avoids.........'
-},
-{
-     heading:'What distinguishes Phoenix College from other colleges',
-     imagelink:'/static/dk.png',
-     story:'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids.........'},
-{
-      heading:'Former Phoenix college student makes airwaves',
-      imagelink:'/static/dk.png',
-      story:'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids.........'},
- ];
-    res.render('home',{data:data});
+    res.render('home');
   });
-  app.get('/calender',(req,res)=>{
-    res.send('no calender to display');
+  app.get('/messages',(req,res)=>{
+    res.render('messages');
   })
 }

@@ -2,26 +2,67 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
   </head>
-  <body>
+  <body style="min-height:100vh">
     <% include partials/nav.ejs%>
     <main>
       <br>
-      <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-lg-2 col-md-2 col-xs-12">
+            <div class="list-group mb-2">
+              <a href="#" class="list-group-item list-group-item-action active">
+                Shortcuts
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+              <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+              <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+            <div class="card mb-2">
+              <h5 class="card-header text-center">School Notifications</h5>
+              <div class="card-body">
+                <h5 class="card-title">List-based media object</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">continue reading</a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">List-based media object</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">continue reading</a>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+          <div class="card mb-2">
+            <h5 class="card-header text-center">Calender Of Events</h5>
+            <div class="card-body">
+              <h5 class="card-title">Consultation Day</h5>
+              <p class="card-text m-3">This years consultation day will be held on the 11th of july.
+                Parents are advised to attend this function inorder to assertain their children's perfomances....</p>
+              <a href="#" class="btn btn-primary">continue reading</a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">School Gala</h5>
+              <p class="card-text m-3">Be advised that this years school gala will be totally free and no money is being collected. The function
+              is expected to start at 3pm and end lattest at 6pm. The school service bus will continue its normal routine trips from 5pm</p>
+              <a href="#" class="btn btn-primary">continue reading</a>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </main>
-    <% include partials/footer.ejs%>
   </body>
 </html>
 <main>

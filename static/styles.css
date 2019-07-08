@@ -9,12 +9,6 @@ body{
   font-size: 30px;
   text-align: center;
 }
-nav{
-  background-color: gray;
-  text-align: center;
-  height:100px;
-  padding-top:60px;
-}
 span{
   margin:5px;
 }
@@ -52,5 +46,10 @@ span{
 }
 footer{
   width: 100vw;
+  background-color: inherit;
+}
 
+.articles{
+  margin:10px;
+  border:2px skyblue;
 }

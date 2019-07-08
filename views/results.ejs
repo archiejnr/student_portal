@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My results</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,10 +18,10 @@
   </head>
   <body>
     <% include partials/nav.ejs%>
-      <main>
+      <main style="height:60%;overflow-y:scroll;">
         <br>
         <div class="container">
-          <table class="table table-bordered table-hover table-condensed">
+          <table class="table  table-hover table-condensed">
             <tr>
               <th>Course Name</th>
               <th>Grade</th>
@@ -28,14 +29,21 @@
             </tr>
             <%data.forEach((item)=>{%>
               <%if(item.grade<26){%>
-                <tr class="danger">
+                <tr class="table-danger">
                   <td><%=item.course%></td>
                   <td><%=item.grade%></td>
                   <td><%=item.evaluation%></td>
                 </tr>
               <%}%>
-              <%if(item.grade>25&&item.grade>49){%>
-                <tr class="warning">
+              <%if(item.grade>25&&item.grade<49){%>
+                <tr class="table-warning">
+                  <td><%=item.course%></td>
+                  <td><%=item.grade%></td>
+                  <td><%=item.evaluation%></td>
+                </tr>
+              <%}%>
+              <%if(item.grade>49&&item.grade<101){%>
+                <tr class="table-success">
                   <td><%=item.course%></td>
                   <td><%=item.grade%></td>
                   <td><%=item.evaluation%></td>
@@ -45,6 +53,5 @@
           </table>
         </div>
       </main>
-      <% include partials/footer.ejs %>
   </body>
 </html>
