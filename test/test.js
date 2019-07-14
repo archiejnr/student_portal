@@ -4,18 +4,88 @@ const data=require('../models/data');
 
 describe('db tests',()=>{
   //test data
-  var data1;
 
-//saves data to the database
-it('saves data to the db',(done)=>{
-  data1=new data({
-        name:'Charity',
-        grade:100,
-        evaluation:"Excellent Result"
-      });
-      data1.save().then(()=>{
-        assert(data1.isNew===false)
-      })
-      done()
+
+//variable declarations
+  var course1={
+    courseName:'Geography',
+    grade:0,
+    TeacherComment:''
+  }
+  var student1={
+    name:'natasha',
+    courses:[],
+    messages:[]
+  }
+  var student2={
+    name:'Sharon',
+    courses:[],
+    messsages:[],
+  }
+  var student3 ={
+    name:'Victor',
+    courses:[]
+  }
+  var data1 = new data({
+    class:'Form 1',
+    classTeacher:'Ms Samhungu',
+    students:[student1,student2]
   });
+
+//adds a new class to the database
+/*it('saves data to the db',(done)=>{
+  data1.save().then(()=>{
+    data.findOne({classTeacher:'Ms Samhungu'}).then((record)=>{
+      assert(record.students.length===2)
+    })
+  })
+  done();
+})
+//adding a new student to the class
+it('adds a student in the database',(done)=>{
+  data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
+    result.students.push(student3);
+    result.save().then(()=>{
+      data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
+        assert(result.students.length===3)
+      })
+    })
+  })
+  done();
+});
+
+//adds a course to a students courses Array
+it('adds a course to all the sudents data',(done)=>{
+  data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
+    result.students.forEach((student)=>{
+      student.courses.push(course1);
+    });
+    result.save().then(()=>{
+      data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
+        assert(result.students[0].courses.length===1)
+      })
+    })
+  })
+  done();
+})*/
+//updates information about a student
+//seems like the findOne method can only find the key value combination on the outermost part of the object
+
+it('adds information to the students data',(done)=>{
+  data.findOne({class:'Form 1'}).then((res)=>{
+    res.students.forEach((student)=>{
+      if (student.name==='Victor'){
+        student.courses.pop();
+        student.courses.push(course1);
+      }
+    })
+      res.save().then(()=>{
+        data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
+        let arr= result.students[2].courses.length
+        assert(arr===1)
+        })
+      })
+  })
+  done();
+})
 })

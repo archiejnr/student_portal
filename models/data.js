@@ -1,26 +1,27 @@
 const mongoose=require('mongoose');
 const schema=mongoose.Schema;
 
-const classSchema=new schema({
-  classTeacher:String,
-  students:[studentSchema]
+const courseSchema= new schema({
+  courseName:String,
+  grade:Number,
+  TeacherComment:String
+});
+
+const messageSchema= new schema({
+  from:String,
+  messages:Array
 });
 
 const studentSchema =new schema({
   name:String,
   courses:[courseSchema],
-  messages:messageSchema
+  messages:[messageSchema]
 })
 
-const messageSchema= new schema({
-  from:String,
-  message:Array
-});
-
-const courseSchema= new schema({
-  courseName:String,
-  grade:Number,
-  TeacherComment:String
+const classSchema=new schema({
+  class:String,
+  classTeacher:String,
+  students:[studentSchema]
 });
 
 var data=mongoose.model('class info',classSchema);
