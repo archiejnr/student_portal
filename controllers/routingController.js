@@ -1,5 +1,7 @@
 const bodyParser=require('body-parser');
 const urlencodedParser=bodyParser.urlencoded({extended:false});
+const mongoose=require('mongoose');
+const data=require('../models/data');
 
 
 module.exports=function(app){
@@ -32,10 +34,17 @@ module.exports=function(app){
     },]
     res.render('results',{data:data});
   });
+  app.get('/',(req,res)=>{
+    res.render('home');
+  });
   app.get('/home',(req,res)=>{
     res.render('home');
   });
   app.get('/messages',(req,res)=>{
-    res.render('messages');
+    var messages;
+    data.findOne({classTeacher:'Ms Samhungu'}).then(()=>{
+      messages=record.students[0].messages.length
+        res.send(`there are ${messages} unread messages`);
+    });
   })
 }

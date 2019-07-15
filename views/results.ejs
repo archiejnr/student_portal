@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
     <style>
       footer{
         position: absolute;
@@ -18,40 +19,110 @@
   </head>
   <body>
     <% include partials/nav.ejs%>
-      <main style="height:60%;overflow-y:scroll;">
+      <main class=" bg-dark">
         <br>
         <div class="container">
-          <table class="table  table-hover table-condensed">
-            <tr>
-              <th>Course Name</th>
-              <th>Grade</th>
-              <th>Teachers Evaluation</th>
-            </tr>
-            <%data.forEach((item)=>{%>
-              <%if(item.grade<26){%>
-                <tr class="table-danger">
-                  <td><%=item.course%></td>
-                  <td><%=item.grade%></td>
-                  <td><%=item.evaluation%></td>
-                </tr>
-              <%}%>
-              <%if(item.grade>25&&item.grade<49){%>
-                <tr class="table-warning">
-                  <td><%=item.course%></td>
-                  <td><%=item.grade%></td>
-                  <td><%=item.evaluation%></td>
-                </tr>
-              <%}%>
-              <%if(item.grade>49&&item.grade<101){%>
-                <tr class="table-success">
-                  <td><%=item.course%></td>
-                  <td><%=item.grade%></td>
-                  <td><%=item.evaluation%></td>
-                </tr>
-              <%}%>
-            <%})%>
-          </table>
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="card text-center">
+                      <div class="card-header">
+                        Form 1
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">2009</h5>
+                        <p class="card-text">Class Teacher: Ms Samhungu</p>
+                        <a href="#" class="btn btn-primary viewResults b0">View Results</a>
+                      </div>
+                      <div class="card-footer text-muted">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          Form 2
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">2010</h5>
+                          <p class="card-text">Class Teacher: Ms Samhungu</p>
+                          <a href="#" class="btn btn-primary viewResults b1">View Results</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="row py-4">
+              <div class="col-md-6">
+                  <div class="card text-center">
+                      <div class="card-header">
+                        Form 3
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">2011</h5>
+                        <p class="card-text">Class Teacher: Ms Samhungu</p>
+                        <a href="#" class="btn btn-primary viewResults b2">View Results</a>
+                      </div>
+                      <div class="card-footer text-muted">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          Form 4
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">2012</h5>
+                          <p class="card-text">Class Teacher: Ms Samhungu</p>
+                          <a href="#" class="btn btn-primary viewResults b3">View Results</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                        </div>
+                      </div>
+                  </div>
+            </div>
         </div>
       </main>
+      <div class="popup text-center p-4 bg-light hidden">
+        <strong class="text-primary">Form 1 first Term</strong>
+        <div class="row">
+          <div class="col">
+          <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+              <th>Subject</th>
+              <th>Grade</th>
+              <th>Evaluation</th>
+            </tr>
+            <tr class="danger">
+              <td>Jill</td>
+              <td>Smith</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Eve</td>
+              <td>Jackson</td>
+              <td>24</td>
+            </tr>
+            <tr class="success">
+              <td>John</td>
+              <td>Doe</td>
+              <td>34</td>
+            </tr>
+            <tr>
+              <td>Stephanie</td>
+              <td>Landon</td>
+              <td>47</td>
+            </tr>
+            <tr>
+              <td>Mike</td>
+              <td>Johnson</td>
+              <td>19</td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        <button type="button" class="btn btn-danger popupButton">Close</button>
+      </div>
   </body>
 </html>
