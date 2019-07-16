@@ -67,7 +67,10 @@ footer{
 }
 .popupButton{
   position:absolute;
-  bottom:5%;
+  right:1%;
+  top:1%;
+  font-size:35px;
+  color:red
 }
 .hidden{
   display:none;
