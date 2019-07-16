@@ -41,10 +41,6 @@ module.exports=function(app){
     res.render('home');
   });
   app.get('/messages',(req,res)=>{
-    var messages;
-    data.findOne({classTeacher:'Ms Samhungu'}).then(()=>{
-      messages=record.students[0].messages.length
-        res.send(`there are ${messages} unread messages`);
-    });
+    res.render('messages')
   })
 }
