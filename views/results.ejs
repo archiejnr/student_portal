@@ -94,31 +94,13 @@
               <th>Grade</th>
               <th>Evaluation</th>
             </tr>
-            <tr class="danger">
-              <td>Jill</td>
-              <td>Smith</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <td>Eve</td>
-              <td>Jackson</td>
-              <td>24</td>
-            </tr>
-            <tr class="success">
-              <td>John</td>
-              <td>Doe</td>
-              <td>34</td>
-            </tr>
-            <tr>
-              <td>Stephanie</td>
-              <td>Landon</td>
-              <td>47</td>
-            </tr>
-            <tr>
-              <td>Mike</td>
-              <td>Johnson</td>
-              <td>19</td>
-            </tr>
+            <% data.forEach((item)=>{%>
+              <tr class="danger">
+                <td><%=item.course%></td>
+                <td><%= item.grade%></td>
+                <td><%= item.evaluation%></td>
+              </tr>
+            <%})%>
           </table>
         </div>
         </div>
