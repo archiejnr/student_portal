@@ -31,7 +31,10 @@ describe('db tests',()=>{
     classTeacher:'Ms Samhungu',
     students:[student1,student2]
   });
-
+let message={
+  from:'Archbold',
+  messages:'Hi There how are you'
+}
 //adds a new class to the database
 /*it('saves data to the db',(done)=>{
   data1.save().then(()=>{
@@ -40,7 +43,8 @@ describe('db tests',()=>{
     })
   })
   done();
-})
+})*/
+/*
 //adding a new student to the class
 it('adds a student in the database',(done)=>{
   data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
@@ -70,7 +74,7 @@ it('adds a course to all the sudents data',(done)=>{
 })*/
 //updates information about a student
 //seems like the findOne method can only find the key value combination on the outermost part of the object
-
+/*
 it('adds information to the students data',(done)=>{
   data.findOne({class:'Form 1'}).then((res)=>{
     res.students.forEach((student)=>{
@@ -86,6 +90,25 @@ it('adds information to the students data',(done)=>{
         })
       })
   })
+  done();
+})*/
+/*it('gets messages from the db',(done)=>{
+  data.findOne({classTeacher:'Ms Samhungu'}).then((res)=>{
+    assert(res.students[0].messages.length===0);
+  })
+  done();
+})*/
+//pushing a message to the message array in the class object
+it('pushes a message to the messages array of the first student',(done)=>{
+  data.findOne({classTeacher:'Ms Samhungu'}).then((res)=>{
+    res.students[0].messages.push(message);
+    res.save().then(()=>{
+      data.findOne({classTeacher:'Ms Samhungu'}).then((result)=>{
+      let arr= result.students[0].messages.length
+      assert(arr===1)
+      })
+    })
+})
   done();
 })
 })

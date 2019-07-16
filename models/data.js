@@ -9,7 +9,7 @@ const courseSchema= new schema({
 
 const messageSchema= new schema({
   from:String,
-  messages:Array
+  messages:String
 });
 
 const studentSchema =new schema({
