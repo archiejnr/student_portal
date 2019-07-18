@@ -13,7 +13,7 @@ module.exports=function(app){
   students : [
       {
           name: "natasha",
-          courses : [],
+          courses : [{course:'Mathematics',grade:90,evaluation:'Can do better'},{course:'English',grade:85,evaluation:'Fair Perfomance'}],
           messages : [
               {
                   from: "Archbold",
@@ -31,17 +31,33 @@ module.exports=function(app){
 }];
 
   app.get('/results',(req,res)=>{
-    res.render('results',{data:data});
+    let messages={
+
+    }
+    let data={
+      messages:{
+        unread:[{
+          message:document[0].students[0].messages[0].message
+        }]
+      }
+    //  courses:document.students[0].courses
+    }
+
+    res.render('results');
   });
   app.get('/',(req,res)=>{
     let messages={
-      unread:0
+      unread:[{
+        message:document[0].students[0].messages[0].message
+      }]
     }
     res.render('home',{data:messages});
   });
   app.get('/home',(req,res)=>{
     let messages={
-      unread:0
+      unread:[{
+        message:document[0].students[0].messages[0].message
+      }]
     }
     res.render('home',{data:messages});
   });
@@ -51,7 +67,6 @@ app.get('/messages',(req,res)=>{
       unread:[{
         message:document[0].students[0].messages[0].message
       }]
-
     }
   res.render('messages',{data:messages});
   })
