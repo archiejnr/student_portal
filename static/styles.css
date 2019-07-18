@@ -75,3 +75,7 @@ footer{
 .hidden{
   display:none;
 }
+.messageContainer{
+  border:2px solid rgb(23, 156, 116);
+  border-radius:4px;
+}
