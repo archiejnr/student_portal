@@ -40,7 +40,14 @@ module.exports=function(app){
   app.get('/home',(req,res)=>{
     res.render('home');
   });
-  app.get('/messages',(req,res)=>{
-    res.render('messages')
+app.get('/messages',(req,res)=>{
+    let messages={
+      unread:0
+    }
+    data.findOne({classTeacher:'Ms Samhungu'}).then((res)=>{
+    console.log(res)
+    messages.unread=res.students[0].messages.length;
+  });
+  res.render('messages',{data:messages});
   })
 }

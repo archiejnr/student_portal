@@ -92,12 +92,14 @@ it('adds information to the students data',(done)=>{
   })
   done();
 })*/
-/*it('gets messages from the db',(done)=>{
+it('gets messages from the db',(done)=>{
   data.findOne({classTeacher:'Ms Samhungu'}).then((res)=>{
-    assert(res.students[0].messages.length===0);
+    console.log(res.students[0].messages[0].from)
+    assert(res.students[0].messages.length===1);
   })
   done();
-})*/
+})
+/*
 //pushing a message to the message array in the class object
 it('pushes a message to the messages array of the first student',(done)=>{
   data.findOne({classTeacher:'Ms Samhungu'}).then((res)=>{
@@ -110,5 +112,5 @@ it('pushes a message to the messages array of the first student',(done)=>{
     })
 })
   done();
-})
+})*/
 })
