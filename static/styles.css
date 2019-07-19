@@ -79,3 +79,7 @@ footer{
   border:2px solid rgb(23, 156, 116);
   border-radius:4px;
 }
+main{
+  height:90vh;
+  overflow-y: hidden;
+}
