@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>school calender</title>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="/static/styles.css">
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,7 +17,7 @@
   </head>
   <body>
     <%include partials/nav.ejs %>
-    <main>
+    <main class="bg-dark" style="height:90vh">
       <div class="container pt-3">
         <div class="row">
           <p>
@@ -32,7 +34,7 @@
           <div class="collapse show bg-light text-primary" id="collapseExample">
             <br>
                 <div class="card card-body" style="width:100%">
-                  <ul class="p-4">
+                  <ul class="">
                       <a>
                         <li class="messageContainer">
                             <span class="sender m-4">From: <%=data.messages.from%><span>
@@ -49,7 +51,7 @@
                   </ul>
                 </div>
           </div>
-          <div class="collapse bg-dark" id="collapseExample">
+          <div class="collapse" id="collapseExample">
             <br>
                 <div class="card card-body">
                   There are no unread messages
