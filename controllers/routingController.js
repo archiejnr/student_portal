@@ -5,7 +5,7 @@ const data=require('../models/data');
 
 
 module.exports=function(app){
-
+//this is a sample of the document tha is saved in the database
   let document=[
     {
   class : "Form 1",
@@ -39,11 +39,12 @@ module.exports=function(app){
         unread:[{
           message:document[0].students[0].messages[0].message
         }]
-      }
-    //  courses:document.students[0].courses
+      },
+      //try retriving this code from the backend instead of putting it here
+     courses:[{course:'Mathematics',grade:90,evaluation:'Can do better'},{course:'English',grade:85,evaluation:'Fair Perfomance'}]
     }
 
-    res.render('results');
+    res.render('results',{data:data});
   });
   app.get('/',(req,res)=>{
     let messages={
