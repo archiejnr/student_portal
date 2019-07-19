@@ -16,7 +16,7 @@ module.exports=function(app){
           courses : [{course:'Mathematics',grade:90,evaluation:'Can do better'},{course:'English',grade:85,evaluation:'Fair Perfomance'}],
           messages : [
               {
-                  from: "Archbold",
+                  from: "Victor",
                   message : "Hi there how are you"
               }
           ]
@@ -31,44 +31,67 @@ module.exports=function(app){
 }];
 
   app.get('/results',(req,res)=>{
-    let messages={
-
-    }
     let data={
       messages:{
-        unread:[{
-          message:document[0].students[0].messages[0].message
-        }]
+      unread:1//to be extracted from the server
       },
-      //try retriving this code from the backend instead of putting it here
-     courses:[{course:'Mathematics',grade:90,evaluation:'Can do better'},{course:'English',grade:85,evaluation:'Fair Perfomance'}]
+      profile:{
+      userName:'Archie'//to be extracted from the server
+    },
+    courses:[{course:'Mathematics',grade:90,evaluation:'Can do better'},{course:'English',grade:85,evaluation:'Fair Perfomance'}]
     }
 
     res.render('results',{data:data});
   });
+
+  //the default page that a user arrives on
   app.get('/',(req,res)=>{
-    let messages={
-      unread:[{
-        message:document[0].students[0].messages[0].message
-      }]
+
+    let data={
+      messages:{
+      unread:1//to be extracted from the server
+      },
+      profile:{
+      userName:'Archie'//to be extracted from the server
     }
-    res.render('home',{data:messages});
+    }
+    res.render('home',{data:data});
   });
   app.get('/home',(req,res)=>{
-    let messages={
-      unread:[{
-        message:document[0].students[0].messages[0].message
-      }]
+    let data={
+      messages:{
+      unread:1//to be extracted from the server
+      },
+      profile:{
+      userName:'Archie'//to be extracted from the server
     }
-    res.render('home',{data:messages});
+    }
+    res.render('home',{data:data});
   });
   //messages page
 app.get('/messages',(req,res)=>{
-    let messages={
-      unread:[{
-        message:document[0].students[0].messages[0].message
-      }]
+    let data={
+      messages:{
+      unread:1,//to be extracted from the server
+      message:document[0].students[0].messages[0].message,
+      from:document[0].students[0].messages[0].from
+      },
+      profile:{
+      userName:'Archie'//to be extracted from the server
     }
-  res.render('messages',{data:messages});
+    }
+  res.render('messages',{data:data});
   })
 }
+/*
+let UniformData={
+    messages:{
+    read:null,
+    unread:null
+    },
+    profile:{
+    userName:null
+  }
+}
+
+*/
