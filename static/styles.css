@@ -83,3 +83,6 @@ main{
   height:90vh;
   overflow-y: hidden;
 }
+.messageContainer{
+  list-style: none;
+}
