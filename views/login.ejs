@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
-    <main>
+    <main class="bg-dark">
       <div class="container">
         <div class="row">
-          <div class="login">
+          <div class="login bg-light p-4">
             <form class="" action="index.html" method="post">
-              <input type="text" name="username" value="" placeholder="username" required>
-              <input type="text" name="password" value="" required placeholder="password">
-              <input type="button" name="" value="login" action="submit">
+              <label for="username"><input type="text" name="username" value="" placeholder="username" required></label>
+              <label for="password"><input type="text" name="password" value="" required placeholder="password"></label>
+              <button type="button" name="button" class="btn btn-primary">Login</button>
             </form>
           </div>
         </div>
