@@ -81,7 +81,12 @@ app.get('/messages',(req,res)=>{
     }
     }
   res.render('messages',{data:data});
-  })
+});
+
+  //login page
+app.get('/login',(req,res)=>{
+    res.render('login')
+});
 }
 /*
 let UniformData={
