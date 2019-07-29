@@ -86,3 +86,19 @@ main{
 .messageContainer{
   list-style: none;
 }
+#login{
+  position:absolute;
+  top:10%;
+  left:35%;
+  border-radius:10px;
+}
+#loginRow{
+  text-align: center;
+}
+.inputField{
+  border-top: none;
+  border-right:none;
+  border-bottom: 2px solid black;
+  border-left: none;
+  height:40px;
+}
