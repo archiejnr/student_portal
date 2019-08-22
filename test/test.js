@@ -35,6 +35,11 @@ let message={
   from:'Archbold',
   messages:'Hi There how are you'
 }
+let data2={
+  class:"test",
+  classTeacher:'Mr Idris',
+  message:'this is test data'
+}
 //adds a new class to the database
 /*it('saves data to the db',(done)=>{
   data1.save().then(()=>{
@@ -43,7 +48,18 @@ let message={
     })
   })
   done();
-})*/
+})
+*/
+//just for testing purpose
+
+it('saves test data to db',(done)=>{
+  data2.save().then(()=>{
+    data.findOne({classTeacher:'Mr Idris'}).then((record)=>{
+      assert(record.message==='this is test data')
+    })
+  })
+  done();
+})
 /*
 //adding a new student to the class
 it('adds a student in the database',(done)=>{
@@ -94,7 +110,7 @@ it('adds information to the students data',(done)=>{
 })*/
 it('gets messages from the db',(done)=>{
   data.findOne({classTeacher:'Ms Samhungu'}).then((res)=>{
-    console.log(res.students[0].messages[0].from)
+    console.log(res)
     assert(res.students[0].messages.length===1);
   })
   done();

@@ -70,17 +70,29 @@ module.exports=function(app){
   });
   //messages page
 app.get('/messages',(req,res)=>{
-    let data={
-      messages:{
-      unread:1,//to be extracted from the server
-      message:document[0].students[0].messages[0].message,
-      from:document[0].students[0].messages[0].from
-      },
-      profile:{
-      userName:'Archie'//to be extracted from the server
+  console.log('try1');
+  let message;
+  console.log('try2');
+    data.findOne({classTeacher:'Ms Samhungu'}).then((record)=>{
+      /*console.log('try3');
+      message=record.students[0].messages[0].messages;
+      console.log(message);*/
+      console.log('try4');
+      console.log(record)
+    })
+
+    let dt={
+          messages:{
+          unread:1,//to be extracted from the server
+          message:'Hi inga zvakaoma',
+          from:document[0].students[0].messages[0].from
+          },
+          profile:{
+          userName:'Archie'//to be extracted from the server
+        }
     }
-    }
-  res.render('messages',{data:data});
+  res.render('messages',{data:dt});
+  //res.send('hello Mr Idris')
 });
 
   //login page
